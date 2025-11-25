@@ -13,6 +13,7 @@ object Main extends App {
   implicit val ec = system.dispatcher
 
   // Read config
+  println(ConfigFactory.load().getConfig("producer-service"))
   val config = ConfigFactory.load().getConfig("producer-service")
   val bootstrap = config.getString("kafka-bootstrap")
 
