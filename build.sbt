@@ -14,3 +14,6 @@ libraryDependencies ++= Seq(
   "ch.qos.logback"    % "logback-classic" % "1.4.11"
 )
 fork := true
+
+Compile / run / javaOptions += s"-DKAFKA_BROKERS=${sys.env.getOrElse("KAFKA_BROKERS", "")}"
+Compile / run / javaOptions += "-Dconfig.override.with.environment.variables=true"
