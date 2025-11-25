@@ -15,5 +15,7 @@ libraryDependencies ++= Seq(
 )
 fork := true
 
-Compile / run / javaOptions += s"-DKAFKA_BROKERS=${sys.env.getOrElse("KAFKA_BROKERS", "")}"
-Compile / run / javaOptions += "-Dconfig.override.with.environment.variables=true"
+Compile / run / javaOptions ++= Seq(
+  s"-DKAFKA_BROKERS=${sys.env.getOrElse("KAFKA_BROKERS", "")}",
+  "-Dconfig.override.with.environment.variables=true"
+)
