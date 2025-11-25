@@ -21,3 +21,5 @@ javaOptions ++= Seq(
 )
 
 fork := true
+
+javaOptions in run ++= Seq("-Dconfig.override.with.environment.variables=true")
