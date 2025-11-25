@@ -13,7 +13,4 @@ libraryDependencies ++= Seq(
   "com.typesafe.play" %% "play-json" % "2.9.4",
   "ch.qos.logback"    % "logback-classic" % "1.4.11"
 )
-
-// Modern sbt 1.x syntax – no more "in run" deprecation!
 fork := true
-Compile / run / javaOptions += "-Dconfig.override.with.environment.variables=true"
