@@ -16,4 +16,8 @@ libraryDependencies ++= Seq(
   "ch.qos.logback"    %  "logback-classic" % "1.4.11"
 )
 
+javaOptions ++= Seq(
+  "-Dconfig.override.with.environment.variables=true"
+)
+
 fork := true
