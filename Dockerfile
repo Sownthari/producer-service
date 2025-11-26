@@ -1,0 +1,12 @@
+FROM hseeberger/scala-sbt:11.0.11_1.5.5_2.13.6
+
+WORKDIR /app
+COPY . /app
+
+ENV KAFKA_BROKERS="34.61.161.128:9092,34.61.161.128:9094,34.61.161.128:9096"
+
+RUN sbt compile
+
+EXPOSE 8082
+
+CMD sbt -DKAFKA_BROKERS=$KAFKA_BROKERS -Dconfig.override.with.environment.variables=true run
